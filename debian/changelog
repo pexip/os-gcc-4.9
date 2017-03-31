@@ -1,3 +1,9 @@
+gcc-4.9 (4.9.2-10pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Fri, 31 Mar 2017 02:09:02 +0000
+
 gcc-4.9 (4.9.2-10) unstable; urgency=medium
 
   * Really add x32 multilib packages for i386 cross builds to the control file.
