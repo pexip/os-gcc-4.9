@@ -113,7 +113,7 @@ ifeq ($(with_ssp)-$(with_ssp_default),yes-yes)
     hardening_patches += gcc-default-ssp-strong
   endif
 endif
-ifeq ($(distribution),Ubuntu)
+ifneq (,$(filter $(distribution),Ubuntu PexOS))
   ifneq (,$(findstring gcc-4, $(PKGSOURCE)))
     hardening_patches += \
 	gcc-default-fortify-source \
