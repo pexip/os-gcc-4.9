@@ -1,3 +1,9 @@
+gcc-4.9 (4.9.2-10pexip2) pexip; urgency=low
+
+  * Add retpoline patches
+
+ -- John-Mark Bell <jmb@pexip.com>  Thu, 18 Jan 2018 14:42:07 +0000
+
 gcc-4.9 (4.9.2-10pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging

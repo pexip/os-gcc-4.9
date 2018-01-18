@@ -316,6 +316,16 @@ debian_patches += ada-749574
 debian_patches += ada-mips
 debian_patches += ada-ppc64
 
+# Retpoline patches
+debian_patches += \
+	i386_move_struct_ix86_frame_to_machine_function \
+	i386_use_reference_of_struct_ix86_frame_to_avoid_copy \
+	x86_add_mindirect-branch \
+	x86_add_mfunction-return \
+	x86_add_mindirect-branch-register \
+	x86_add_V_register_operand_modifier \
+	x86_disallow_mindirect-branch_mfunction-return_with_mcmodel_large
+
 series_stamp = $(stampdir)/02-series-stamp
 series: $(series_stamp)
 $(series_stamp):
