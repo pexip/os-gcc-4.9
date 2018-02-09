@@ -1,4 +1,4 @@
-From 1fb3a1828faf064bc0babd4d1a0e2fc40876e67b Mon Sep 17 00:00:00 2001
+From 76f1ffbbb6cd9f6ecde6c82cd16e20a27242e890 Mon Sep 17 00:00:00 2001
 From: "H.J. Lu" <hjl.tools@gmail.com>
 Date: Sat, 13 Jan 2018 18:01:54 -0800
 Subject: [PATCH] x86: Disallow -mindirect-branch=/-mfunction-return= with

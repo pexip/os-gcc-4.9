@@ -1,4 +1,4 @@
-From e699df5d96fea9b6a155f9b52a5f3f40ddb0d51b Mon Sep 17 00:00:00 2001
+From 203c7d9c3e9cb0f88816b481ef8e7e87b3ecc373 Mon Sep 17 00:00:00 2001
 From: "H.J. Lu" <hjl.tools@gmail.com>
 Date: Sat, 6 Jan 2018 22:29:55 -0800
 Subject: [PATCH] x86: Add -mindirect-branch=

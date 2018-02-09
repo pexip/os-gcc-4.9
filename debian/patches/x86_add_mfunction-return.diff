@@ -1,4 +1,4 @@
-From 35590ed7bee817899d56f28ff459942f4bac6e21 Mon Sep 17 00:00:00 2001
+From f039c6f284b2c9ce97c8353d6034978795c4872e Mon Sep 17 00:00:00 2001
 From: "H.J. Lu" <hjl.tools@gmail.com>
 Date: Sat, 6 Jan 2018 22:29:56 -0800
 Subject: [PATCH] x86: Add -mfunction-return=

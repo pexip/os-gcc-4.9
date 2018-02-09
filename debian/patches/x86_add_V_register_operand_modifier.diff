@@ -1,4 +1,4 @@
-From 7ab5b649f729adaf391d7f089fcfaecb3b7c32ac Mon Sep 17 00:00:00 2001
+From 5278e062ef292fd2fbf987d25389785f4c5c0f99 Mon Sep 17 00:00:00 2001
 From: "H.J. Lu" <hjl.tools@gmail.com>
 Date: Sat, 6 Jan 2018 22:29:56 -0800
 Subject: [PATCH] x86: Add 'V' register operand modifier
