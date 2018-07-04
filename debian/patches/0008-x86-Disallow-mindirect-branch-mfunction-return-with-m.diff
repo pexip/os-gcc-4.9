@@ -37,33 +37,35 @@ gcc/testsuite/
 	* gcc.target/i386/ret-thunk-20.c: Likewise.
 	* gcc.target/i386/ret-thunk-21.c: Likewise.
 ---
- src/gcc/config/i386/i386.c                             | 26 ++++++++++++++++++++++
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-10.c  |  7 ++++++
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-8.c   |  7 ++++++
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-9.c   |  7 ++++++
+ gcc/config/i386/i386.c                             | 26 ++++++++++++++++++++++
+ gcc/testsuite/gcc.target/i386/indirect-thunk-10.c  |  7 ++++++
+ gcc/testsuite/gcc.target/i386/indirect-thunk-8.c   |  7 ++++++
+ gcc/testsuite/gcc.target/i386/indirect-thunk-9.c   |  7 ++++++
  .../gcc.target/i386/indirect-thunk-attr-10.c       |  9 ++++++++
  .../gcc.target/i386/indirect-thunk-attr-11.c       |  9 ++++++++
  .../gcc.target/i386/indirect-thunk-attr-9.c        |  9 ++++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-17.c       |  7 ++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-18.c       |  8 +++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-19.c       |  8 +++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-20.c       |  9 ++++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-21.c       |  9 ++++++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-17.c       |  7 ++++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-18.c       |  8 +++++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-19.c       |  8 +++++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-20.c       |  9 ++++++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-21.c       |  9 ++++++++
  13 files changed, 125 insertions(+)
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-10.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-8.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-9.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-10.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-11.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-9.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-17.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-18.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-19.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-20.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-21.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-10.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-8.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-9.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-10.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-11.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-9.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-17.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-18.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-19.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-20.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-21.c
+
+[jmm: Stripped texinfo doc changes, considered non-free by some]
 
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
-index 0292abe1e86..e05f90aae1a 100644
+index 27216def7c0..0231ef838db 100644
 --- a/src/gcc/config/i386/i386.c
 +++ b/src/gcc/config/i386/i386.c
 @@ -4960,6 +4960,19 @@ ix86_set_indirect_branch_type (tree fndecl)
@@ -261,3 +263,6 @@ index 00000000000..eea07f7abe1
 +bar (void)
 +{
 +}
+-- 
+2.11.0
+

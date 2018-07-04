@@ -19,7 +19,7 @@ Tested on x86-64 with ada.
 
 git-svn-id: svn+ssh://gcc.gnu.org/svn/gcc/branches/gcc-7-branch@257123 138bc75d-0d04-0410-961f-82ee72b054a4
 ---
- src/gcc/config/i386/i386.c | 24 ++++++++++++------------
+ gcc/config/i386/i386.c | 24 ++++++++++++------------
  1 file changed, 12 insertions(+), 12 deletions(-)
 
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
@@ -120,3 +120,6 @@ index cda35ed86de..18166e37880 100644
  				     style,
  				     m->fs.cfa_reg == stack_pointer_rtx);
  	}
+-- 
+2.11.0
+

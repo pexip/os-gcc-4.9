@@ -29,6 +29,7 @@ gcc/
 	* config/i386/i386.c (print_reg): Print the name of the full
 	integer register without '%'.
 	(ix86_print_operand): Handle 'V'.
+	 * doc/extend.texi: Document 'V' modifier.
 
 gcc/testsuite/
 
@@ -37,13 +38,13 @@ gcc/testsuite/
 
 	* gcc.target/i386/indirect-thunk-register-4.c: New test.
 ---
- src/gcc/config/i386/i386.c                                    | 12 +++++++++++-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-register-4.c | 13 +++++++++++++
+ gcc/config/i386/i386.c                                    | 12 +++++++++++-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-register-4.c | 13 +++++++++++++
  2 files changed, 24 insertions(+), 1 deletion(-)
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-register-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-register-4.c
 
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
-index 6fbf38b1b8d..0292abe1e86 100644
+index e91e99ebfd6..27216def7c0 100644
 --- a/src/gcc/config/i386/i386.c
 +++ b/src/gcc/config/i386/i386.c
 @@ -14895,6 +14895,7 @@ put_condition_code (enum rtx_code code, enum machine_mode mode, bool reverse,
@@ -112,3 +113,6 @@ index 00000000000..f0cd9b75be8
 +
 +/* { dg-final { scan-assembler "call\[ \t\]*__x86_indirect_thunk_eax" { target ia32 } } } */
 +/* { dg-final { scan-assembler "call\[ \t\]*__x86_indirect_thunk_rax" { target { ! ia32 } } } } */
+-- 
+2.11.0
+

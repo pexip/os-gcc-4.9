@@ -1,3 +1,15 @@
+gcc-4.9 (4.9.2-10+deb8u1pexip1) pexip; urgency=low
+
+  * New upstream release
+
+ -- John-Mark Bell <jmb@pexip.com>  Wed, 04 Jul 2018 12:30:59 +0100
+
+gcc-4.9 (4.9.2-10+deb8u1) jessie-security; urgency=medium
+
+  * Backport of retpoline support by HJ Lu
+
+ -- Moritz Muehlenhoff <jmm@debian.org>  Wed, 31 Jan 2018 12:28:11 +0000
+
 gcc-4.9 (4.9.2-10pexip3) pexip; urgency=low
 
   * Update retpoline patches

@@ -14,7 +14,7 @@ of struct ix86_frame to avoid copy.
 	(ix86_initial_elimination_offset): Likewise.
 	(ix86_expand_split_stack_prologue): Likewise.
 ---
- src/gcc/config/i386/i386.c | 8 +++-----
+ gcc/config/i386/i386.c | 8 +++-----
  1 file changed, 3 insertions(+), 5 deletions(-)
 
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
@@ -64,3 +64,6 @@ index 154d9e62bf6..cda35ed86de 100644
    allocate = frame.stack_pointer_offset - INCOMING_FRAME_SP_OFFSET;
  
    /* This is the label we will branch to if we have enough stack
+-- 
+2.11.0
+

@@ -133,17 +133,17 @@ gcc/testsuite/
 	* gcc.target/i386/indirect-thunk-inline-4.c: Likewise.
 	* gcc.target/i386/indirect-thunk-inline-7.c: Likewise.
 ---
- src/gcc/config/i386/i386-opts.h                        |  13 +
- src/gcc/config/i386/i386-protos.h                      |   1 +
- src/gcc/config/i386/i386.c                             | 541 ++++++++++++++++++++-
- src/gcc/config/i386/i386.h                             |   7 +
- src/gcc/config/i386/i386.md                            |  26 +-
- src/gcc/config/i386/i386.opt                           |  20 +
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |  20 +
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |  20 +
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |  21 +
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |  21 +
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |  44 ++
+ gcc/config/i386/i386-opts.h                        |  13 +
+ gcc/config/i386/i386-protos.h                      |   1 +
+ gcc/config/i386/i386.c                             | 541 ++++++++++++++++++++-
+ gcc/config/i386/i386.h                             |   7 +
+ gcc/config/i386/i386.md                            |  26 +-
+ gcc/config/i386/i386.opt                           |  20 +
+ gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |  20 +
+ gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |  20 +
+ gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |  21 +
+ gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |  21 +
+ gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |  44 ++
  .../gcc.target/i386/indirect-thunk-attr-1.c        |  23 +
  .../gcc.target/i386/indirect-thunk-attr-2.c        |  21 +
  .../gcc.target/i386/indirect-thunk-attr-3.c        |  23 +
@@ -163,29 +163,31 @@ gcc/testsuite/
  .../gcc.target/i386/indirect-thunk-inline-4.c      |  21 +
  .../gcc.target/i386/indirect-thunk-inline-7.c      |  44 ++
  31 files changed, 1208 insertions(+), 14 deletions(-)
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-3.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-4.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-7.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-3.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-4.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-5.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-6.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-7.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-attr-8.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-extern-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-extern-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-extern-3.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-extern-4.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-extern-7.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-inline-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-inline-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-inline-3.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-inline-4.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-inline-7.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-7.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-5.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-6.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-7.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-attr-8.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-extern-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-extern-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-extern-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-extern-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-extern-7.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-inline-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-inline-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-inline-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-inline-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-inline-7.c
+
+[jmm: Stripped texinfo doc changes, considered non-free by some]
 
 diff --git a/src/gcc/config/i386/i386-opts.h b/src/gcc/config/i386/i386-opts.h
 index 47a34dbf781..f44620781c8 100644
@@ -222,7 +224,7 @@ index 6e329788088..7af83af9a60 100644
  #ifdef RTX_CODE
  /* Target data for multipass lookahead scheduling.
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
-index cda35ed86de..a4d2dce7f14 100644
+index 18166e37880..fe580de703b 100644
 --- a/src/gcc/config/i386/i386.c
 +++ b/src/gcc/config/i386/i386.c
 @@ -2509,12 +2509,23 @@ make_pass_insert_vzeroupper (gcc::context *ctxt)
@@ -1697,3 +1699,6 @@ index 00000000000..d02b1dcb1b9
 +/* { dg-final { scan-assembler {\tpause} } } */
 +/* { dg-final { scan-assembler {\tlfence} } } */
 +/* { dg-final { scan-assembler-not "__x86_indirect_thunk" } } */
+-- 
+2.11.0
+

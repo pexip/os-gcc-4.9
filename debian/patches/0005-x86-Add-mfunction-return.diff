@@ -158,16 +158,16 @@ gcc/testsuite/
 	__x86_return_thunk label.
 	Scan for "push" only for Linux.
 ---
- src/gcc/config/i386/i386-protos.h                      |   1 +
- src/gcc/config/i386/i386.c                             | 133 ++++++++++++++++++++-
- src/gcc/config/i386/i386.h                             |   3 +
- src/gcc/config/i386/i386.md                            |   4 +-
- src/gcc/config/i386/i386.opt                           |   6 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |   4 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |   4 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |   4 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |   4 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |   4 +-
+ gcc/config/i386/i386-protos.h                      |   1 +
+ gcc/config/i386/i386.c                             | 133 ++++++++++++++++++++-
+ gcc/config/i386/i386.h                             |   3 +
+ gcc/config/i386/i386.md                            |   4 +-
+ gcc/config/i386/i386.opt                           |   6 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |   4 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |   4 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |   4 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |   4 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |   4 +-
  .../gcc.target/i386/indirect-thunk-attr-1.c        |   4 +-
  .../gcc.target/i386/indirect-thunk-attr-2.c        |   4 +-
  .../gcc.target/i386/indirect-thunk-attr-3.c        |   4 +-
@@ -186,39 +186,41 @@ gcc/testsuite/
  .../gcc.target/i386/indirect-thunk-inline-3.c      |   4 +-
  .../gcc.target/i386/indirect-thunk-inline-4.c      |   4 +-
  .../gcc.target/i386/indirect-thunk-inline-7.c      |   4 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-1.c        |  13 ++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-10.c       |  23 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-11.c       |  23 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-12.c       |  22 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-13.c       |  22 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-14.c       |  22 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-15.c       |  22 ++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-16.c       |  18 +++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-2.c        |  13 ++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-3.c        |  12 ++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-4.c        |  12 ++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-5.c        |  15 +++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-6.c        |  14 +++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-7.c        |  13 ++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-8.c        |  14 +++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-9.c        |  24 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-1.c        |  13 ++
+ gcc/testsuite/gcc.target/i386/ret-thunk-10.c       |  23 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-11.c       |  23 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-12.c       |  22 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-13.c       |  22 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-14.c       |  22 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-15.c       |  22 ++++
+ gcc/testsuite/gcc.target/i386/ret-thunk-16.c       |  18 +++
+ gcc/testsuite/gcc.target/i386/ret-thunk-2.c        |  13 ++
+ gcc/testsuite/gcc.target/i386/ret-thunk-3.c        |  12 ++
+ gcc/testsuite/gcc.target/i386/ret-thunk-4.c        |  12 ++
+ gcc/testsuite/gcc.target/i386/ret-thunk-5.c        |  15 +++
+ gcc/testsuite/gcc.target/i386/ret-thunk-6.c        |  14 +++
+ gcc/testsuite/gcc.target/i386/ret-thunk-7.c        |  13 ++
+ gcc/testsuite/gcc.target/i386/ret-thunk-8.c        |  14 +++
+ gcc/testsuite/gcc.target/i386/ret-thunk-9.c        |  24 ++++
  46 files changed, 487 insertions(+), 55 deletions(-)
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-10.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-11.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-12.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-13.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-14.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-15.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-16.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-3.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-4.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-5.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-6.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-7.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-8.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/ret-thunk-9.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-10.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-11.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-12.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-13.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-14.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-15.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-16.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-4.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-5.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-6.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-7.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-8.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/ret-thunk-9.c
+
+[jmm: Stripped texinfo doc changes, considered non-free by some]
 
 diff --git a/src/gcc/config/i386/i386-protos.h b/src/gcc/config/i386/i386-protos.h
 index 7af83af9a60..fd1a75205b1 100644
@@ -233,7 +235,7 @@ index 7af83af9a60..fd1a75205b1 100644
  #ifdef RTX_CODE
  /* Target data for multipass lookahead scheduling.
 diff --git a/src/gcc/config/i386/i386.c b/src/gcc/config/i386/i386.c
-index a4d2dce7f14..6fbf38b1b8d 100644
+index fe580de703b..e91e99ebfd6 100644
 --- a/src/gcc/config/i386/i386.c
 +++ b/src/gcc/config/i386/i386.c
 @@ -4961,6 +4961,31 @@ ix86_set_indirect_branch_type (tree fndecl)
@@ -1330,3 +1332,6 @@ index 00000000000..fa24a1f7365
 +/* { dg-final { scan-assembler-times {\tlfence} 2 { target { x32 } } } } */
 +/* { dg-final { scan-assembler "call\[ \t\]*__x86_indirect_thunk_(r|e)ax" { target { x32 } } } } */
 +/* { dg-final { scan-assembler-not "pushq\[ \t\]%rax" { target x32 } } } */
+-- 
+2.11.0
+

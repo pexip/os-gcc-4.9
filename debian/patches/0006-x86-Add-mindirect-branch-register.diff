@@ -139,15 +139,15 @@ i386: Rewrite indirect_branch_operand logic
 	* config/i386/predicates.md (indirect_branch_operand): Rewrite
 	ix86_indirect_branch_register logic.
 ---
- src/gcc/config/i386/constraints.md                     |  3 ++-
- src/gcc/config/i386/i386.md                            |  4 ++--
- src/gcc/config/i386/i386.opt                           |  4 ++++
- src/gcc/config/i386/predicates.md                      |  6 ++++--
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |  2 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |  2 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |  2 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |  2 +-
- src/gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |  2 +-
+ gcc/config/i386/constraints.md                     |  3 ++-
+ gcc/config/i386/i386.md                            |  4 ++--
+ gcc/config/i386/i386.opt                           |  4 ++++
+ gcc/config/i386/predicates.md                      |  6 ++++--
+ gcc/testsuite/gcc.target/i386/indirect-thunk-1.c   |  2 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-2.c   |  2 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-3.c   |  2 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-4.c   |  2 +-
+ gcc/testsuite/gcc.target/i386/indirect-thunk-7.c   |  2 +-
  .../gcc.target/i386/indirect-thunk-attr-1.c        |  2 +-
  .../gcc.target/i386/indirect-thunk-attr-2.c        |  2 +-
  .../gcc.target/i386/indirect-thunk-attr-3.c        |  2 +-
@@ -168,17 +168,19 @@ i386: Rewrite indirect_branch_operand logic
  .../gcc.target/i386/indirect-thunk-register-1.c    | 22 ++++++++++++++++++++++
  .../gcc.target/i386/indirect-thunk-register-2.c    | 20 ++++++++++++++++++++
  .../gcc.target/i386/indirect-thunk-register-3.c    | 19 +++++++++++++++++++
- src/gcc/testsuite/gcc.target/i386/ret-thunk-10.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-11.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-12.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-13.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-14.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-15.c       |  2 +-
- src/gcc/testsuite/gcc.target/i386/ret-thunk-9.c        |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-10.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-11.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-12.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-13.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-14.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-15.c       |  2 +-
+ gcc/testsuite/gcc.target/i386/ret-thunk-9.c        |  2 +-
  37 files changed, 107 insertions(+), 35 deletions(-)
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-register-1.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-register-2.c
- create mode 100644 src/gcc/testsuite/gcc.target/i386/indirect-thunk-register-3.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-register-1.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-register-2.c
+ create mode 100644 gcc/testsuite/gcc.target/i386/indirect-thunk-register-3.c
+
+[jmm: Stripped texinfo doc changes, considered non-free by some]
 
 diff --git a/src/gcc/config/i386/constraints.md b/src/gcc/config/i386/constraints.md
 index b662f8747d6..4a4394d5973 100644
@@ -650,3 +652,6 @@ index fa24a1f7365..d1db41cc128 100644
  
  extern void (*bar) (void);
  
+-- 
+2.11.0
+
